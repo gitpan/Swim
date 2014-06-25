@@ -1,8 +1,6 @@
 NAME
     swim - See What I Mean?!
 
-    <badge travis coveralls ingydotnet/swim-pm>
-
 DESCRIPTION
     Swim is a plain text markup language that converts to many formats:
 
