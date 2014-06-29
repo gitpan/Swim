@@ -31,6 +31,10 @@ has farthest => 0;
 has throw_on_error => 1;
 
 sub parse {
+    # XXX Add an optional $position argument. Default to 0. This is the
+    # position to start parsing. Set position and farthest below to this
+    # value. Allows for sub-parsing. Need to somehow return the finishing
+    # position of a subparse. Maybe this all goes in a subparse() method.
     my ($self, $input, $start) = @_;
 
     if ($start) {
@@ -134,14 +138,29 @@ sub match_next {
     return ($result ? $next->{'-skip'} ? [] : $match : 0);
 }
 
+sub match_rule {
+    my ($self, $position, $match) = (@_, []);
+    $self->{position} = $position;
+    $self->{farthest} = $self->{position}
+        if $self->{position} > $self->{farthest};
+    $match = [ $match ] if @$match > 1;
+    my ($ref, $parent) = @{$self}{'rule', 'parent'};
+    my $rule = $self->{grammar}{tree}{$ref}
+        or die "No rule defined for '$ref'";
+
+    [ $rule->{action}->($self->{receiver}, @$match) ];
+}
+
 sub match_ref {
     my ($self, $ref, $parent) = @_;
     my $rule = $self->{grammar}{tree}{$ref}
         or die "No rule defined for '$ref'";
-    my $match = $self->match_next($rule) or return 0;
+    my $match = $self->match_next($rule) or return;
     return $Pegex::Constant::Dummy unless $rule->{action};
     @{$self}{'rule', 'parent'} = ($ref, $parent);
-    # XXX API mismatch
+
+    # XXX Possible API mismatch.
+    # Not sure if we should "splat" the $match.
     [ $rule->{action}->($self->{receiver}, @$match) ];
 }
 
@@ -151,7 +170,7 @@ sub match_rgx {
 
     pos($$buffer) = $self->{position};
 
-    $$buffer =~ /$regexp/g or return 0;
+    $$buffer =~ /$regexp/g or return;
     $self->{position} = pos($$buffer);
 
     no strict 'refs';
@@ -177,7 +196,7 @@ sub match_all {
         else {
             $self->{farthest} = $position
                 if ($self->{position} = $position) > $self->{farthest};
-            return 0;
+            return;
         }
     }
     $set = [ $set ] if $len > 1;
@@ -191,30 +210,12 @@ sub match_any {
             return $match;
         }
     }
-    return 0;
+    return;
 }
 
 sub match_err {
     my ($self, $error) = @_;
     $self->throw_error($error);
-}
-
-sub match_ref_trace {
-    my ($self, $ref, $parent) = @_;
-    my $asr = $parent->{'+asr'};
-    my $note =
-        $asr == -1 ? '(!)' :
-        $asr == 1 ? '(=)' :
-        '';
-    $self->trace("try_$ref$note");
-    my $result;
-    if ($result = $self->match_ref($ref)) {
-        $self->trace("got_$ref$note");
-    }
-    else {
-        $self->trace("not_$ref$note");
-    }
-    return $result;
 }
 
 sub trace {

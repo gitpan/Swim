@@ -36,6 +36,7 @@
          "requires" : {
             "HTML::Escape" : "0",
             "Pegex" : "0.30",
+            "Text::Autoformat" : "0",
             "perl" : "v5.8.1"
          }
       }
@@ -52,6 +53,6 @@
          "web" : "https://github.com/ingydotnet/swim-pm"
       }
    },
-   "version" : "0.1.2"
+   "version" : "0.1.3"
 }
 

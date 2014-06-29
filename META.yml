@@ -21,9 +21,10 @@ no_index:
 requires:
   HTML::Escape: '0'
   Pegex: '0.30'
+  Text::Autoformat: '0'
   perl: v5.8.1
 resources:
   bugtracker: https://github.com/ingydotnet/swim-pm/issues
   homepage: https://github.com/ingydotnet/swim-pm
   repository: https://github.com/ingydotnet/swim-pm.git
-version: 0.1.2
+version: 0.1.3
