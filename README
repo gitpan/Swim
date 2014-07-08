@@ -14,13 +14,15 @@ DESCRIPTION
 
     *   MarkDown
 
-        *   GitHub Flavored
+        *   GitHub Flavored Markdown
 
     *   Pod
+
+    *   Formatted Plain Text
+
+    *   LaTeX
 
     *   DocBook
-
-    *   Pod
 
     *   Manpage
 
@@ -159,7 +161,7 @@ AUTHOR
     Ingy döt Net <ingy@cpan.org>
 
 COPYRIGHT AND LICENSE
-    Copyright (c) 2014. Ingy döt Net.
+    Copyright 2014. Ingy döt Net.
 
     This program is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.
