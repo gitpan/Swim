@@ -1,3 +1,6 @@
+0.1.7 Mon Jul  7 22:35:03 PDT 2014
+ - Don't wrap paragraphs with URLs in them.
+
 0.1.6 Mon Jul  7 21:36:35 PDT 2014
  - Support .txt output. Formatted plain text.
  - Add usage to `bin/swim`
