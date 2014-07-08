@@ -26,7 +26,7 @@ my %WriteMakefileArgs = (
     "Pegex" => "0.30",
     "Text::Autoformat" => 0
   },
-  "VERSION" => "0.1.7",
+  "VERSION" => "0.1.8",
   "test" => {
     "TESTS" => "t/*.t"
   }

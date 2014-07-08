@@ -3,7 +3,6 @@ NAME
 
 DESCRIPTION
     Swim is a plain text markup language that converts to many formats:
-    =over
 
     *   HTML
 
@@ -32,23 +31,29 @@ DESCRIPTION
     *   MediaWiki
 
     The Swim framework is easily extensible, so adding new outputs is easy.
-    =head2 What Makes Swim Different
 
+  What Makes Swim Different
     There are already a lot of text-to-html languages in the world. How is
-    Swim different? Here are a few points: =over
+    Swim different?
+
+    Here are a few points:
 
     *   Very rich capabilities:
 
         Swim aims to be a feature superset of the other markups since it
-        converts to all of them.Most of the other markups don't support
+        converts to all of them. Most of the other markups don't support
         things like multiple paragraphs in a bullet point (like you are
-        reading right now!). =item * Simple, consistent markup:
+        reading right now!).
+
+    *   Simple, consistent markup:
 
         Even though Swim intends to be very rich, it will use a simple set
         of syntax idioms to accomplish its tasks. One of my favorite sayings
         comes from Larry Wall of Perl fame: "Make simple things simple and
         hard things possible". Swim does just that (hopefully without
-        looking too much like Perl ;). =item * Extensible:
+        looking too much like Perl ;).
+
+    *   Extensible:
 
         Swim is easy to extend at many levels. You can add new backend
         formats. You can also define your own markup syntaxes. You can even
@@ -64,37 +69,46 @@ DESCRIPTION
         very simple PEG topdown grammar. That means it is easy to grok,
         maintain and extend. Second, Pegex parsers work in many languages.
         That means that you can use Pegex natively in languages like Ruby,
-        JavaScript, Perl, Python and many others. =item * Comments and blank
-        lines:
+        JavaScript, Perl, Python and many others.
+
+    *   Comments and blank lines:
 
         Most markups don't support comments and eat extra blank lines. These
         things are useful. Swim not only supports comments, they are part of
         the data model. ie They get rendered as HTML (or comments in other
         target languages that support comments). Swim also support throwaway
-        comments, for times when you want to hide part of a document. =back
+        comments, for times when you want to hide part of a document.
 
   Syntax Concepts
     Before diving into the actual markup syntax, let's discuss the concepts
-    that drive the decisions that Swim makes. Most documents are just plain
-    language using letters and numbers and a few punctuation chars like
-    comma, dash, apostrophe, parentheses and colon. Also endings: period,
-    exclamation point and question mark. We leave those alone (at least in
-    the normal prose context). This leaves a bunch of punctuation characters
-    that we can do special things with. Namely: "@#$%^&*_=+|/~[]<>{}".
-    Sometimes context matters. For instance it is very rare for a prose line
-    to start with a period, so we can use that as a markup. The important
-    thing in all this is that we be able to reverse the meaning for edge
-    cases. ie We need a way to make markup characters be viewed as regular
-    characters. Swim uses a backslash before a character to make it not be
-    seen as markup. For instance this text "*not bold*" is not bold because
-    it was written like this: "\*not bold\*". Swim has a document model that
-    views things as blocks and phrases. This is very similar to HTML's DIV
-    and SPAN concepts. Swim views a document as a sequence of top level
-    blocks. Blocks are further subdivided into either a sequence of blocks
-    or a sequence of phrases. Phrases can only be subdivided into more
-    phrases. Consider this example document: A paragraph *is* a block. It
-    gets divided into phrases like 'pure text' and *bold text*. A bold
-    phrase can be divided: *all bold /some italic/*.
+    that drive the decisions that Swim makes.
+
+    Most documents are just plain language using letters and numbers and a
+    few punctuation chars like comma, dash, apostrophe, parentheses and
+    colon. Also endings: period, exclamation point and question mark. We
+    leave those alone (at least in the normal prose context).
+
+    This leaves a bunch of punctuation characters that we can do special
+    things with. Namely: "@#$%^&*_=+|/~[]<>{}". Sometimes context matters.
+    For instance it is very rare for a prose line to start with a period, so
+    we can use that as a markup.
+
+    The important thing in all this is that we be able to reverse the
+    meaning for edge cases. ie We need a way to make markup characters be
+    viewed as regular characters. Swim uses a backslash before a character
+    to make it not be seen as markup. For instance this text "*not bold*" is
+    not bold because it was written like this: "\*not bold\*".
+
+    Swim has a document model that views things as blocks and phrases. This
+    is very similar to HTML's DIV and SPAN concepts. Swim views a document
+    as a sequence of top level blocks. Blocks are further subdivided into
+    either a sequence of blocks or a sequence of phrases. Phrases can only
+    be subdivided into more phrases.
+
+    Consider this example document:
+
+        A paragraph *is* a block. It gets divided into phrases like 'pure text' and
+        *bold text*. A bold phrase can be divided: *all bold /some italic/*.
 
         * Lists are blocks.
         * Each item is a block.
@@ -106,7 +120,9 @@ DESCRIPTION
     is terminated by a blank line. There is also an explicit syntax for
     blocks and phrases. Every implicit syntax can be written explicitly. For
     instance, here is an implicit syntax example followed by its explicit
-    equivalent: A paragraph with some *bold text* in it.
+    equivalent:
+
+        A paragraph with some *bold text* in it.
 
         <<< para
         A paragraph with some <bold bold text> in it.
@@ -115,8 +131,12 @@ DESCRIPTION
    Two Space Indent
     Swim uses a 2 space indentation and it is very instrumental to its
     design. It allows for a very nice and natural embedding of blocks within
-    blocks. Consider this list: * Point one has text on 2 lines * Subpoint a
-    * Point two
+    blocks. Consider this list:
+
+        * Point one has
+          text on 2 lines
+          * Subpoint a
+        * Point two
 
           A paragraph for point 2 followed by some preformatted text:
             # Code example
@@ -124,32 +144,27 @@ DESCRIPTION
 
     As you can see, 2 space indent is very natural here and allows for
     putting blocks inside blocks in a way that is not available in most
-    markups. =head2 Swim Syntax
+    markups.
 
+  Swim Syntax
     There are 4 sets of syntax to define: block / implicit, phrase /
     implicit, block / explicit and phrase / explicit. There are also
-    escaping mechanisms. =head3 Block / Implicit Syntaxes
+    escaping mechanisms.
 
+   Block / Implicit Syntaxes
     A paragraph is a set of contiguous set of plain text lines. It is
-    terminated by a blank line or by another block syntax at that level. *To
-    be continued* =head1 AUTHOR
+    terminated by a blank line or by another block syntax at that level.
 
-    Ingy döt Net <ingy@cpan.org> =head1 COPYRIGHT AND LICENSE
+    *To be continued*
 
-    Copyright 2014. Ingy döt Net. This program is free software; you can
-    redistribute it and/or modify it under the same terms as Perl itself.
+AUTHOR
+    Ingy döt Net <ingy@cpan.org>
+
+COPYRIGHT AND LICENSE
+    Copyright 2014. Ingy döt Net.
+
+    This program is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
     See <http://www.perl.com/perl/misc/Artistic.html>
-
-POD ERRORS
-    Hey! The above document had some coding errors, which are explained
-    below:
-
-    Around line 22:
-        '=item' outside of any '=over'
-
-    Around line 66:
-        '=item' outside of any '=over'
-
-    Around line 102:
-        You forgot a '=back' before '=head2'
 
