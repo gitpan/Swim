@@ -1,3 +1,6 @@
+0.1.9 Sun Jul 13 18:24:59 PDT 2014
+ - Make --help exit (after helping).
+
 0.1.8 Mon Jul  7 22:47:50 PDT 2014
  - Had to revert 0.1.7 from bug in Text::Autoformat :\
 
