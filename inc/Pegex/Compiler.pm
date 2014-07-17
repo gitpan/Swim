@@ -54,13 +54,8 @@ sub combinate {
             return $self;
         }
     }
-    my $tree = $self->{tree};
     $self->{_tree} = {
-        map {
-            (/^\+/ or not defined $tree->{$_}{'.rgx'})
-            ? ($_, $tree->{$_})
-            : ();
-        } keys %$tree
+        map {($_, $self->{tree}->{$_})} grep { /^\+/ } keys %{$self->{tree}}
     };
     for my $rule (@rule) {
         $self->combinate_rule($rule);

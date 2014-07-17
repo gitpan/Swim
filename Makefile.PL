@@ -23,10 +23,10 @@ my %WriteMakefileArgs = (
   "NAME" => "Swim",
   "PREREQ_PM" => {
     "HTML::Escape" => 0,
-    "Pegex" => "0.30",
+    "Pegex" => "0.41",
     "Text::Autoformat" => 0
   },
-  "VERSION" => "0.1.11",
+  "VERSION" => "0.1.12",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -35,7 +35,7 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "HTML::Escape" => 0,
-  "Pegex" => "0.30",
+  "Pegex" => "0.41",
   "Text::Autoformat" => 0
 );
 
