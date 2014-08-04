@@ -8,12 +8,12 @@ META.yml
 Makefile.PL
 README
 bin/swim
+inc/Pegex.pm
 inc/Pegex/Base.pm
 inc/Pegex/Bootstrap.pm
 inc/Pegex/Compiler.pm
 inc/Pegex/Grammar.pm
 inc/Pegex/Input.pm
-inc/Pegex/Optimizer.pm
 inc/Pegex/Parser.pm
 inc/Pegex/Receiver.pm
 inc/Pegex/Tree.pm
@@ -25,6 +25,7 @@ inc/TestML/Compiler/Lite.pm
 inc/TestML/Compiler/Pegex.pm
 inc/TestML/Compiler/Pegex/AST.pm
 inc/TestML/Compiler/Pegex/Grammar.pm
+inc/TestML/Library.pm
 inc/TestML/Library/Debug.pm
 inc/TestML/Library/Standard.pm
 inc/TestML/Runtime.pm
@@ -50,6 +51,7 @@ t/issue-5.t
 t/link.tml
 t/list-data.tml
 t/list.tml
+t/meta.tml
 t/para.tml
 t/phrase-func.tml
 t/phrase.tml

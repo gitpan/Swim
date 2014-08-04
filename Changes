@@ -1,3 +1,8 @@
+0.1.13 Mon Aug  4 14:12:24 PDT 2014
+ - Add support for meta data
+ - Both inline and external --meta=file
+ - Render with <$varname>
+
 0.1.12 Thu Jul 17 10:42:42 PDT 2014
  - Dep on a fixed Pegex
 
