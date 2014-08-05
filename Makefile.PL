@@ -23,10 +23,12 @@ my %WriteMakefileArgs = (
   "NAME" => "Swim",
   "PREREQ_PM" => {
     "HTML::Escape" => 0,
+    "Hash::Merge" => 0,
     "Pegex" => "0.41",
-    "Text::Autoformat" => 0
+    "Text::Autoformat" => 0,
+    "YAML::XS" => 0
   },
-  "VERSION" => "0.1.13",
+  "VERSION" => "0.1.14",
   "test" => {
     "TESTS" => "t/*.t"
   }
@@ -35,8 +37,10 @@ my %WriteMakefileArgs = (
 
 my %FallbackPrereqs = (
   "HTML::Escape" => 0,
+  "Hash::Merge" => 0,
   "Pegex" => "0.41",
-  "Text::Autoformat" => 0
+  "Text::Autoformat" => 0,
+  "YAML::XS" => 0
 );
 
 

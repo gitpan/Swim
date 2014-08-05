@@ -35,8 +35,10 @@
       "runtime" : {
          "requires" : {
             "HTML::Escape" : "0",
+            "Hash::Merge" : "0",
             "Pegex" : "0.41",
             "Text::Autoformat" : "0",
+            "YAML::XS" : "0",
             "perl" : "v5.8.1"
          }
       }
@@ -53,6 +55,6 @@
          "web" : "https://github.com/ingydotnet/swim-pm"
       }
    },
-   "version" : "0.1.13"
+   "version" : "0.1.14"
 }
 

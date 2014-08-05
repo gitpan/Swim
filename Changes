@@ -1,3 +1,7 @@
+0.1.14 Mon Aug  4 23:05:57 PDT 2014
+ - Refactor YAML loading into Swim::Util
+ - Add prereqs Hash::Merge and YAML::XS to Meta
+
 0.1.13 Mon Aug  4 14:12:24 PDT 2014
  - Add support for meta data
  - Both inline and external --meta=file

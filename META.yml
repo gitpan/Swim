@@ -20,11 +20,13 @@ no_index:
     - example
 requires:
   HTML::Escape: '0'
+  Hash::Merge: '0'
   Pegex: '0.41'
   Text::Autoformat: '0'
+  YAML::XS: '0'
   perl: v5.8.1
 resources:
   bugtracker: https://github.com/ingydotnet/swim-pm/issues
   homepage: https://github.com/ingydotnet/swim-pm
   repository: https://github.com/ingydotnet/swim-pm.git
-version: 0.1.13
+version: 0.1.14
