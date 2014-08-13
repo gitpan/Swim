@@ -1,3 +1,6 @@
+0.1.16 Wed Aug 13 16:35:02 PDT 2014
+ - Headers now can have phrase markup
+
 0.1.15 Thu Aug  7 00:19:12 PDT 2014
  - Fix unicode issues
 
