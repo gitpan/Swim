@@ -1,3 +1,6 @@
+0.1.17 Fri Aug 15 20:44:07 PDT 2014
+ - Switch hashbang to '#!/usr/bin/env perl'
+
 0.1.16 Wed Aug 13 16:35:02 PDT 2014
  - Headers now can have phrase markup
 
