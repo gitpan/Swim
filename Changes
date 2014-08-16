@@ -1,3 +1,6 @@
+0.1.22 Sat Aug 16 16:57:38 PDT 2014
+ - Change ' / ' to '/' in doc
+
 0.1.21 Sat Aug 16 16:14:14 PDT 2014
  - Fix strict/warnings
 
