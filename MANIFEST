@@ -42,7 +42,6 @@ lib/Swim/Markup.pm
 lib/Swim/Pod.pm
 lib/Swim/Tree.pm
 lib/Swim/Util.pm
-t/000-compile-modules.t
 t/block.tml
 t/bugs.tml
 t/comment.tml
