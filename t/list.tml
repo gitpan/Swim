@@ -148,3 +148,23 @@ one point two
 two
 
 =back
+
+=== Block in block spacing bug
+--- swim
++ foo
+
+  bar
+
+  baz
+--- pod
+=over
+
+=item 1.
+
+foo
+
+bar
+
+baz
+
+=back
