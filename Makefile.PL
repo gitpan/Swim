@@ -28,7 +28,7 @@ my %WriteMakefileArgs = (
     "Text::Autoformat" => 0,
     "YAML::XS" => 0
   },
-  "VERSION" => "0.1.25",
+  "VERSION" => "0.1.26",
   "test" => {
     "TESTS" => "t/*.t"
   }

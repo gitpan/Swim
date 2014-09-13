@@ -1,3 +1,6 @@
+0.1.26 Sat Sep 13 02:09:40 PDT 2014
+ - Account for all phrases in Pod
+
 0.1.25 Sat Sep 13 02:00:32 PDT 2014
  - Fixed bug in multi-block list items
 
