@@ -1,3 +1,7 @@
+0.1.31 Sun Oct 26 22:56:22 UTC 2014
+ - Add ordered and data list support for HTML
+ - Add under support in Pod
+
 0.1.30 Fri Sep 19 17:36:19 PDT 2014
  - Fix Issue/15. Bad titles in HTML rendering.
 

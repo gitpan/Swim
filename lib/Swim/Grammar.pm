@@ -1,5 +1,3 @@
-BEGIN { $ENV{PERL_PEGEX_AUTO_COMPILE} = 'Swim::Grammar'; }
-
 use strict; use warnings;
 package Swim::Grammar;
 use Pegex::Base;
@@ -14,7 +12,7 @@ use constant start_rules => [
     'block-list-item',
 ];
 
-sub make_tree {   # Generated/Inlined by Pegex::Grammar (0.55)
+sub make_tree {   # Generated/Inlined by Pegex::Grammar (0.57)
   {
     '+grammar' => 'swim',
     '+toprule' => 'document',
