@@ -1,3 +1,8 @@
+0.1.33 Wed Dec 31 21:19:10 PST 2014
+ - Refactor into OO classes
+ - Swim.pm is a converter class
+ - Swim::Command has all the bin/swim guts
+
 0.1.32 Wed Dec 31 15:55:12 PST 2014
  - Add block-func support
 

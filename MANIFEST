@@ -35,6 +35,7 @@ lib/Swim.pm
 lib/Swim.pod
 lib/Swim/Byte.pm
 lib/Swim/CheatSheet.pod
+lib/Swim/Command.pm
 lib/Swim/Grammar.pm
 lib/Swim/HTML.pm
 lib/Swim/Markdown.pm
