@@ -1,7 +1,10 @@
-NAME
+Name
     Swim - See What I Mean?!
 
-DESCRIPTION
+Synopsis
+        > swim --to=pod doc/MyModule.swim
+
+Description
     Swim is a plain text markup language that converts to many formats:
 
     *   HTML
@@ -159,10 +162,15 @@ DESCRIPTION
 
     *To be continued*
 
-AUTHOR
+See Also
+    *   Swim::Plugin::badge
+
+    *   Swim::Plugin::cpan
+
+Author
     Ingy döt Net <ingy@cpan.org>
 
-COPYRIGHT AND LICENSE
+Copyright and License
     Copyright 2014. Ingy döt Net.
 
     This program is free software; you can redistribute it and/or modify it

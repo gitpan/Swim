@@ -92,7 +92,7 @@ sub render_pref {
     "<pre><code>$out\n</code></pre>\n";
 }
 
-sub render_func {
+sub render_pfunc {
     my ($self, $node) = @_;
     if ($node =~ /^(\w[\-\w]*) ?((?s:.*)?)$/) {
         my ($name, $args) = ($1, $2);
@@ -182,6 +182,13 @@ sub render_link {
     my ($self, $node) = @_;
     my ($link, $text) = @{$node}{qw(link text)};
     $text = $link if not length $text;
+
+    # XXX Temporary hack for inline grant blog
+    # We can solve this in a formal and extensible way later.
+    if (defined $ENV{SWIM_LINK_FORMAT_HACK}) {
+        $link = "https://metacpan.org/pod/$link";
+    }
+
     "<a href=\"$link\">$text</a>";
 }
 
