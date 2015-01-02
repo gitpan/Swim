@@ -1,3 +1,6 @@
+0.1.35 Thu Jan  1 18:16:49 PST 2015
+ - Allow spaces and arguments in one line block-func
+
 0.1.34 Wed Dec 31 23:22:30 PST 2014
  - Fix to allow single char bold and italic phrases
 
