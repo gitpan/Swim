@@ -1,3 +1,6 @@
+0.1.36 Mon Jan  5 08:26:34 PST 2015
+ - Doc fix by David Hand++ PR/29
+
 0.1.35 Thu Jan  1 18:16:49 PST 2015
  - Allow spaces and arguments in one line block-func
 
