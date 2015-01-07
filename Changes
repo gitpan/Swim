@@ -1,3 +1,6 @@
+0.1.37 Wed Jan  7 11:25:21 PST 2015
+ - Support utf8 in swim --to_man
+
 0.1.36 Mon Jan  5 08:26:34 PST 2015
  - Doc fix by David Hand++ PR/29
 
